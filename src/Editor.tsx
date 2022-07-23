@@ -1,18 +1,22 @@
+import '@arco-design/web-react/dist/css/arco.css';
+import './Editor.less';
+
 import React, { useRef } from 'react';
 import { AutoFocusPlugin } from '@lexical/react/LexicalAutoFocusPlugin';
 import { AutoScrollPlugin } from '@lexical/react/LexicalAutoScrollPlugin';
-import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 import { CheckListPlugin } from '@lexical/react/LexicalCheckListPlugin';
 import { ClearEditorPlugin } from '@lexical/react/LexicalClearEditorPlugin';
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
+import { ContentEditable } from '@lexical/react/LexicalContentEditable';
+import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin';
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin';
 import { ListPlugin } from '@lexical/react/LexicalListPlugin';
-import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
 import { OnChangePlugin } from '@lexical/react/LexicalOnChangePlugin';
-import theme from './themes';
+import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin';
+import { useSharedHistoryContext } from './context/SharedHistoryContext';
 import Nodes from './nodes';
-import '@arco-design/web-react/dist/css/arco.css';
-import './Editor.less';
+import HorizontalRulePlugin from './plugins/HorizontalRulePlugin';
+import theme from './themes';
 
 interface EditorProps {
   namespace?: string;
@@ -30,7 +34,7 @@ function Editor(props: EditorProps) {
     isReadOnly = false,
     onChange,
   } = props;
-  // const { historyState } = useSharedHistoryContext();
+  const { historyState } = useSharedHistoryContext();
   const scrollRef = useRef(null);
 
   return (
@@ -65,6 +69,8 @@ function Editor(props: EditorProps) {
           <ListPlugin />
           <CheckListPlugin />
           <LinkPlugin />
+          <HorizontalRulePlugin />
+          <HistoryPlugin externalHistoryState={historyState} />
         </div>
       </div>
     </LexicalComposer>

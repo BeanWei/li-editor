@@ -105,3 +105,53 @@ export function IconBgColor({ color = '#FADB14' }) {
     </svg>
   );
 }
+
+export function IconAlignJustify() {
+  return (
+    <svg viewBox="0 0 256 256" className="arco-icon">
+      <g fill="currentColor" fillRule="nonzero">
+        <path d="M218 89c5.523 0 10 4.477 10 10 0 5.43-4.327 9.848-9.72 9.996L218 109H38c-5.523 0-10-4.477-10-10 0-5.43 4.327-9.848 9.72-9.996L38 89h180ZM218 30c5.523 0 10 4.477 10 10 0 5.43-4.327 9.848-9.72 9.996L218 50H38c-5.523 0-10-4.477-10-10 0-5.43 4.327-9.848 9.72-9.996L38 30h180ZM218 148c5.523 0 10 4.477 10 10 0 5.43-4.327 9.848-9.72 9.996L218 168H38c-5.523 0-10-4.477-10-10 0-5.43 4.327-9.848 9.72-9.996L38 148h180ZM218 207c5.523 0 10 4.477 10 10 0 5.43-4.327 9.848-9.72 9.996L218 227H38c-5.523 0-10-4.477-10-10 0-5.43 4.327-9.848 9.72-9.996L38 207h180Z"></path>
+      </g>
+    </svg>
+  );
+}
+
+export function IconIndent() {
+  return (
+    <svg viewBox="0 0 220 201" className="arco-icon">
+      <g fill="none" fillRule="evenodd">
+        <path
+          stroke="currentColor"
+          strokeWidth="20"
+          strokeLinecap="round"
+          d="M83 130.5h107M83 70.5h107M10 10h180M10 190.5h180"
+        ></path>
+        <path
+          d="m11.6 62.59 30.78 30.308a6.438 6.438 0 0 1 0 9.204L11.6 132.41c-2.581 2.542-6.766 2.542-9.348 0a6.458 6.458 0 0 1-1.936-4.602V67.192c0-3.594 2.96-6.508 6.61-6.508 1.753 0 3.434.685 4.674 1.906Z"
+          fill="currentColor"
+          fillRule="nonzero"
+        ></path>
+      </g>
+    </svg>
+  );
+}
+
+export function IconOutdent() {
+  return (
+    <svg viewBox="0 0 220 201" className="arco-icon">
+      <g fill="none" fillRule="evenodd">
+        <path
+          stroke="currentColor"
+          strokeWidth="20"
+          strokeLinecap="round"
+          d="M83 130.5h107M83 70.5h107M10 10h180M10 190.5h180"
+        ></path>
+        <path
+          d="M33.033 62.59 2.253 92.898a6.438 6.438 0 0 0 0 9.204l30.78 30.308c2.581 2.542 6.766 2.542 9.347 0a6.458 6.458 0 0 0 1.936-4.602V67.192c0-3.594-2.959-6.508-6.61-6.508a6.662 6.662 0 0 0-4.673 1.906Z"
+          fill="currentColor"
+          fillRule="nonzero"
+        ></path>
+      </g>
+    </svg>
+  );
+}

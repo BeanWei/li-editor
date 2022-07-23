@@ -19,6 +19,11 @@ export default () => {
         <Toolbar.MoreMark />
         <Toolbar.FontColor />
         <Toolbar.BackgroundColor />
+        <Toolbar.Align />
+        <Toolbar.Dent />
+        <Toolbar.CheckList />
+        <Toolbar.Quote />
+        <Toolbar.HorizontalRule />
       </Toolbar>
     </Editor>
   );

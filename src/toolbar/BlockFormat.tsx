@@ -35,7 +35,6 @@ export default function BlockFormat() {
     if (blockType !== 'paragraph') {
       editor.update(() => {
         const selection = $getSelection();
-
         if ($isRangeSelection(selection)) {
           $wrapLeafNodesInElements(selection, () => $createParagraphNode());
         }
@@ -47,7 +46,6 @@ export default function BlockFormat() {
     if (blockType !== headingSize) {
       editor.update(() => {
         const selection = $getSelection();
-
         if ($isRangeSelection(selection)) {
           $wrapLeafNodesInElements(selection, () => $createHeadingNode(headingSize));
         }
@@ -83,7 +81,6 @@ export default function BlockFormat() {
     if (blockType !== 'quote') {
       editor.update(() => {
         const selection = $getSelection();
-
         if ($isRangeSelection(selection)) {
           $wrapLeafNodesInElements(selection, () => $createQuoteNode());
         }
