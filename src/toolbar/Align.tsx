@@ -2,13 +2,11 @@ import { FORMAT_ELEMENT_COMMAND } from 'lexical';
 import React from 'react';
 import { Button, Dropdown, Space, Tooltip } from '@arco-design/web-react';
 import { IconAlignCenter, IconAlignLeft, IconAlignRight } from '@arco-design/web-react/icon';
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { useToolbarContext } from '../context/ToolbarContext';
 import { IconAlignJustify } from '../ui';
 
 export default function Align() {
-  const [editor] = useLexicalComposerContext();
-  const { alignType } = useToolbarContext();
+  const { activeEditor, alignType } = useToolbarContext();
 
   return (
     <Tooltip content="Alignment">
@@ -31,7 +29,7 @@ export default function Align() {
                   iconOnly
                   icon={<IconAlignLeft />}
                   onClick={() => {
-                    editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left');
+                    activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'left');
                   }}
                 />
               </Tooltip>
@@ -42,7 +40,7 @@ export default function Align() {
                   iconOnly
                   icon={<IconAlignCenter />}
                   onClick={() => {
-                    editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center');
+                    activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'center');
                   }}
                 />
               </Tooltip>
@@ -53,7 +51,7 @@ export default function Align() {
                   iconOnly
                   icon={<IconAlignRight />}
                   onClick={() => {
-                    editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right');
+                    activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'right');
                   }}
                 />
               </Tooltip>
@@ -64,7 +62,7 @@ export default function Align() {
                   iconOnly
                   icon={<IconAlignJustify />}
                   onClick={() => {
-                    editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify');
+                    activeEditor?.dispatchCommand(FORMAT_ELEMENT_COMMAND, 'justify');
                   }}
                 />
               </Tooltip>

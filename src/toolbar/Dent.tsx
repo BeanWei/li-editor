@@ -1,11 +1,11 @@
 import { INDENT_CONTENT_COMMAND, OUTDENT_CONTENT_COMMAND } from 'lexical';
 import React from 'react';
 import { Button, Dropdown, Space, Tooltip } from '@arco-design/web-react';
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
+import { useToolbarContext } from '../context/ToolbarContext';
 import { IconIndent, IconOutdent } from '../ui/Icon/index';
 
 export default function Dent() {
-  const [editor] = useLexicalComposerContext();
+  const { activeEditor } = useToolbarContext();
 
   return (
     <Tooltip content="Dent">
@@ -28,7 +28,7 @@ export default function Dent() {
                   iconOnly
                   icon={<IconIndent />}
                   onClick={() => {
-                    editor.dispatchCommand(INDENT_CONTENT_COMMAND, undefined);
+                    activeEditor?.dispatchCommand(INDENT_CONTENT_COMMAND, undefined);
                   }}
                 />
               </Tooltip>
@@ -39,7 +39,7 @@ export default function Dent() {
                   iconOnly
                   icon={<IconOutdent />}
                   onClick={() => {
-                    editor.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined);
+                    activeEditor?.dispatchCommand(OUTDENT_CONTENT_COMMAND, undefined);
                   }}
                 />
               </Tooltip>

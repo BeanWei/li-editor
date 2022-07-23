@@ -2,12 +2,10 @@ import React from 'react';
 import { Button, Tooltip } from '@arco-design/web-react';
 import { IconCheckSquare } from '@arco-design/web-react/icon';
 import { INSERT_CHECK_LIST_COMMAND, REMOVE_LIST_COMMAND } from '@lexical/list';
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { useToolbarContext } from '../context/ToolbarContext';
 
 export default function CheckList() {
-  const [editor] = useLexicalComposerContext();
-  const { isCheckList } = useToolbarContext();
+  const { activeEditor, isCheckList } = useToolbarContext();
 
   return (
     <Tooltip content="Check List">
@@ -18,9 +16,9 @@ export default function CheckList() {
         icon={<IconCheckSquare />}
         onClick={() => {
           if (isCheckList) {
-            editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined);
+            activeEditor?.dispatchCommand(REMOVE_LIST_COMMAND, undefined);
           } else {
-            editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined);
+            activeEditor?.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined);
           }
         }}
       />

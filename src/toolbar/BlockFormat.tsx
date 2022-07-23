@@ -8,7 +8,6 @@ import {
   INSERT_UNORDERED_LIST_COMMAND,
   REMOVE_LIST_COMMAND,
 } from '@lexical/list';
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { $createHeadingNode, $createQuoteNode, HeadingTagType } from '@lexical/rich-text';
 import { $wrapLeafNodesInElements } from '@lexical/selection';
 import { useToolbarContext } from '../context/ToolbarContext';
@@ -28,12 +27,11 @@ const blockTypeToBlockName = {
 };
 
 export default function BlockFormat() {
-  const [editor] = useLexicalComposerContext();
-  const { blockType } = useToolbarContext();
+  const { activeEditor, blockType } = useToolbarContext();
 
   const formatParagraph = () => {
     if (blockType !== 'paragraph') {
-      editor.update(() => {
+      activeEditor?.update(() => {
         const selection = $getSelection();
         if ($isRangeSelection(selection)) {
           $wrapLeafNodesInElements(selection, () => $createParagraphNode());
@@ -44,7 +42,7 @@ export default function BlockFormat() {
 
   const formatHeading = (headingSize: HeadingTagType) => {
     if (blockType !== headingSize) {
-      editor.update(() => {
+      activeEditor?.update(() => {
         const selection = $getSelection();
         if ($isRangeSelection(selection)) {
           $wrapLeafNodesInElements(selection, () => $createHeadingNode(headingSize));
@@ -55,31 +53,31 @@ export default function BlockFormat() {
 
   const formatBulletList = () => {
     if (blockType !== 'bullet') {
-      editor.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined);
+      activeEditor?.dispatchCommand(INSERT_UNORDERED_LIST_COMMAND, undefined);
     } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined);
+      activeEditor?.dispatchCommand(REMOVE_LIST_COMMAND, undefined);
     }
   };
 
   const formatCheckList = () => {
     if (blockType !== 'check') {
-      editor.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined);
+      activeEditor?.dispatchCommand(INSERT_CHECK_LIST_COMMAND, undefined);
     } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined);
+      activeEditor?.dispatchCommand(REMOVE_LIST_COMMAND, undefined);
     }
   };
 
   const formatNumberedList = () => {
     if (blockType !== 'number') {
-      editor.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined);
+      activeEditor?.dispatchCommand(INSERT_ORDERED_LIST_COMMAND, undefined);
     } else {
-      editor.dispatchCommand(REMOVE_LIST_COMMAND, undefined);
+      activeEditor?.dispatchCommand(REMOVE_LIST_COMMAND, undefined);
     }
   };
 
   const formatQuote = () => {
     if (blockType !== 'quote') {
-      editor.update(() => {
+      activeEditor?.update(() => {
         const selection = $getSelection();
         if ($isRangeSelection(selection)) {
           $wrapLeafNodesInElements(selection, () => $createQuoteNode());
@@ -90,7 +88,7 @@ export default function BlockFormat() {
 
   const formatCode = () => {
     if (blockType !== 'code') {
-      editor.update(() => {
+      activeEditor?.update(() => {
         const selection = $getSelection();
 
         if ($isRangeSelection(selection)) {
