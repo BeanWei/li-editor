@@ -14,7 +14,7 @@ export default function Redo() {
         className="li-editor-toolbar-widget"
         iconOnly
         icon={<IconRedo />}
-        type={canRedo ? 'secondary' : 'text'}
+        type="text"
         disabled={!canRedo}
         onClick={() => {
           activeEditor?.dispatchCommand(REDO_COMMAND, undefined);

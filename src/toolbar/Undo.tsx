@@ -14,7 +14,7 @@ export default function Undo() {
         className="li-editor-toolbar-widget"
         iconOnly
         icon={<IconUndo />}
-        type={canUndo ? 'secondary' : 'text'}
+        type="text"
         disabled={!canUndo}
         onClick={() => {
           activeEditor?.dispatchCommand(UNDO_COMMAND, undefined);
