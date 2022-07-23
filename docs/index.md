@@ -8,7 +8,17 @@ export default () => {
   return (
     <Editor>
       <Toolbar>
-        <Toolbar.BoldButton />
+        <Toolbar.Undo />
+        <Toolbar.Redo />
+        <Toolbar.BlockFormat />
+        <Toolbar.FontSize />
+        <Toolbar.Bold />
+        <Toolbar.Italic />
+        <Toolbar.Strikethrough />
+        <Toolbar.Underline />
+        <Toolbar.MoreMark />
+        <Toolbar.FontColor />
+        <Toolbar.BackgroundColor />
       </Toolbar>
     </Editor>
   );
