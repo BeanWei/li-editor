@@ -100,6 +100,7 @@ function Toolbar(props: React.PropsWithChildren) {
           const parentList = $getNearestNodeOfType<ListNode>(anchorNode, ListNode);
           const type = parentList ? parentList.getListType() : element.getListType();
           setBlockType(type);
+          setIsCheckList(type === 'check');
         } else {
           const type = $isHeadingNode(element) ? element.getTag() : element.getType();
           setBlockType(type);
@@ -108,6 +109,7 @@ function Toolbar(props: React.PropsWithChildren) {
             setCodeLanguage(language ? CODE_LANGUAGE_MAP[language] || language : '');
             return;
           }
+          setIsCheckList(false);
         }
       }
 

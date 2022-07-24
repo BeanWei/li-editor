@@ -8,45 +8,43 @@
   &__paragraph {
     position: relative;
     margin: 0;
-    margin-bottom: 8px;
+    margin-bottom: 7.83px;
   }
   &__paragraph:last-child {
     margin-bottom: 0;
   }
   &__quote {
-    margin: 0;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    padding-left: 16px;
-    color: rgb(101, 103, 107);
-    font-size: 15px;
-    border-left-color: rgb(206, 208, 212);
-    border-left-width: 4px;
+    margin: 10px 0;
+    padding-left: 10px;
+    border-left-color: #d8dad9;
+    border-left-width: 2px;
     border-left-style: solid;
+    opacity: 0.7;
   }
   &__h1 {
-    margin: 0;
-    margin-bottom: 12px;
-    padding: 0;
-    color: rgb(5, 5, 5);
-    font-weight: 400;
-    font-size: 24px;
+    margin-top: 38px;
+    margin-bottom: 19px;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 38px;
   }
   &__h2 {
-    margin: 0;
-    margin-top: 10px;
-    padding: 0;
-    color: rgb(101, 103, 107);
-    font-weight: 700;
-    font-size: 15px;
-    text-transform: uppercase;
+    margin-top: 34px;
+    margin-bottom: 17px;
+    font-size: 24px;
+    line-height: 34px;
   }
   &__h3 {
-    margin: 0;
-    margin-top: 10px;
-    padding: 0;
-    font-size: 12px;
-    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  &__h4 {
+    margin-top: 26px;
+    margin-bottom: 13px;
+    font-size: 16px;
+    line-height: 26px;
   }
   &__textBold {
     font-weight: bold;
@@ -82,7 +80,7 @@
     border-bottom: 1px solid rgba(88, 144, 255, 0.3);
   }
   &__link {
-    color: rgb(33, 111, 219);
+    color: #1672f3;
     text-decoration: none;
   }
   &__link:hover {
@@ -141,54 +139,50 @@
   }
   &__ol1 {
     margin: 0;
-    margin-left: 16px;
     padding: 0;
     list-style-position: inside;
   }
   &__ol2 {
     margin: 0;
-    margin-left: 16px;
     padding: 0;
     list-style-position: inside;
     list-style-type: upper-alpha;
   }
   &__ol3 {
     margin: 0;
-    margin-left: 16px;
     padding: 0;
     list-style-position: inside;
     list-style-type: lower-alpha;
   }
   &__ol4 {
     margin: 0;
-    margin-left: 16px;
     padding: 0;
     list-style-position: inside;
     list-style-type: upper-roman;
   }
   &__ol5 {
     margin: 0;
-    margin-left: 16px;
     padding: 0;
     list-style-position: inside;
     list-style-type: lower-roman;
   }
   &__ul {
     margin: 0;
-    margin-left: 16px;
     padding: 0;
     list-style-position: inside;
   }
   &__listItem {
-    margin: 8px 32px;
+    margin-bottom: 3.915px;
+    margin-left: 14px;
+    &::marker {
+      padding-right: 6px;
+    }
   }
   &__listItemChecked,
   &__listItemUnchecked {
     position: relative;
-    margin-right: 8px;
-    margin-left: 8px;
-    padding-right: 24px;
-    padding-left: 24px;
+    margin-left: 0;
+    padding-left: 28px;
     list-style-type: none;
     outline: none;
   }

@@ -18,7 +18,6 @@ const blockTypeToBlockName = {
   h2: 'Heading 2',
   h3: 'Heading 3',
   h4: 'Heading 4',
-  h5: 'Heading 5',
   bullet: 'Bulleted List',
   number: 'Numbered List',
   check: 'Check List',
@@ -124,7 +123,6 @@ export default function BlockFormat() {
           case 'h2':
           case 'h3':
           case 'h4':
-          case 'h5':
             formatHeading(value);
             break;
           case 'bullet':
