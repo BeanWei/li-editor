@@ -1,6 +1,5 @@
-import React, { ChangeEvent, useCallback } from 'react';
 import { Select, SelectProps } from '@arco-design/web-react';
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
+import React, { ChangeEvent, useCallback } from 'react';
 import { useToolbarContext } from '../context/ToolbarContext';
 
 const defaultFontSizeOptions: SelectProps['options'] = [

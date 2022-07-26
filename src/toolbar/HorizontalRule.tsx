@@ -1,7 +1,7 @@
-import React from 'react';
 import { Button, Tooltip } from '@arco-design/web-react';
 import { IconMinus } from '@arco-design/web-react/icon';
 import { INSERT_HORIZONTAL_RULE_COMMAND } from '@lexical/react/LexicalHorizontalRuleNode';
+import React from 'react';
 import { useToolbarContext } from '../context/ToolbarContext';
 
 export default function HorizontalRule() {

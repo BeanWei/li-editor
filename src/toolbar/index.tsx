@@ -1,22 +1,19 @@
-import './index.less';
-
+import { $isCodeNode, CODE_LANGUAGE_MAP } from '@lexical/code';
+import { $isListNode, ListNode } from '@lexical/list';
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
+import { $isHeadingNode } from '@lexical/rich-text';
+import { $getSelectionStyleValueForProperty, $patchStyleText } from '@lexical/selection';
+import { $getNearestNodeOfType, mergeRegister } from '@lexical/utils';
 import {
   $getSelection,
   $isRangeSelection,
   CAN_REDO_COMMAND,
   CAN_UNDO_COMMAND,
   COMMAND_PRIORITY_CRITICAL,
-  LexicalNode,
   NodeKey,
   SELECTION_CHANGE_COMMAND,
 } from 'lexical';
 import React, { useCallback, useEffect, useState } from 'react';
-import { $isCodeNode } from '@lexical/code';
-import { $isListNode, ListNode } from '@lexical/list';
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { $isHeadingNode } from '@lexical/rich-text';
-import { $getSelectionStyleValueForProperty, $patchStyleText } from '@lexical/selection';
-import { $getNearestNodeOfType, mergeRegister } from '@lexical/utils';
 import { ToolbarContext } from '../context/ToolbarContext';
 import { getSelectedNode } from '../utils/node';
 import Align from './Align';
@@ -28,6 +25,7 @@ import Dent from './Dent';
 import FontColor from './FontColor';
 import FontSize from './FontSize';
 import HorizontalRule from './HorizontalRule';
+import './index.less';
 import Italic from './Italic';
 import MoreMark from './MoreMark';
 import Quote from './Quote';
@@ -35,15 +33,6 @@ import Redo from './Redo';
 import Strikethrough from './Strikethrough';
 import Underline from './Underline';
 import Undo from './Undo';
-
-// TODO: import { CODE_LANGUAGE_MAP } from '@lexical/code';
-const CODE_LANGUAGE_MAP: Record<string, string> = {
-  javascript: 'js',
-  md: 'markdown',
-  plaintext: 'plain',
-  python: 'py',
-  text: 'plain',
-};
 
 function Toolbar(props: React.PropsWithChildren) {
   const [editor] = useLexicalComposerContext();
@@ -101,6 +90,7 @@ function Toolbar(props: React.PropsWithChildren) {
           const type = parentList ? parentList.getListType() : element.getListType();
           setBlockType(type);
           setIsCheckList(type === 'check');
+          setIsQuote(false);
         } else {
           const type = $isHeadingNode(element) ? element.getTag() : element.getType();
           setBlockType(type);
@@ -110,6 +100,7 @@ function Toolbar(props: React.PropsWithChildren) {
             return;
           }
           setIsCheckList(false);
+          setIsQuote(type === 'quote');
         }
       }
 

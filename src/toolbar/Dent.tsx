@@ -1,6 +1,6 @@
+import { Button, Dropdown, Space, Tooltip } from '@arco-design/web-react';
 import { INDENT_CONTENT_COMMAND, OUTDENT_CONTENT_COMMAND } from 'lexical';
 import React from 'react';
-import { Button, Dropdown, Space, Tooltip } from '@arco-design/web-react';
 import { useToolbarContext } from '../context/ToolbarContext';
 import { IconIndent, IconOutdent } from '../ui/Icon/index';
 

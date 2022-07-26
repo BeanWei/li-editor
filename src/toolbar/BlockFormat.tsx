@@ -1,5 +1,3 @@
-import { $createParagraphNode, $getSelection, $isRangeSelection } from 'lexical';
-import React from 'react';
 import { Select } from '@arco-design/web-react';
 import { $createCodeNode } from '@lexical/code';
 import {
@@ -10,6 +8,8 @@ import {
 } from '@lexical/list';
 import { $createHeadingNode, $createQuoteNode, HeadingTagType } from '@lexical/rich-text';
 import { $wrapLeafNodesInElements } from '@lexical/selection';
+import { $createParagraphNode, $getSelection, $isRangeSelection } from 'lexical';
+import React from 'react';
 import { useToolbarContext } from '../context/ToolbarContext';
 
 const blockTypeToBlockName = {

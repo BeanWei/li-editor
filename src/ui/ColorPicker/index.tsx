@@ -1,7 +1,6 @@
-import './index.less';
-
 import React from 'react';
 import { basicColors } from './constant';
+import './index.less';
 
 function ColorItem(props: {
   color: string;

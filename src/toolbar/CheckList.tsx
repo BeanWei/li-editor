@@ -1,7 +1,7 @@
-import React from 'react';
 import { Button, Tooltip } from '@arco-design/web-react';
 import { IconCheckSquare } from '@arco-design/web-react/icon';
 import { INSERT_CHECK_LIST_COMMAND, REMOVE_LIST_COMMAND } from '@lexical/list';
+import React from 'react';
 import { useToolbarContext } from '../context/ToolbarContext';
 
 export default function CheckList() {

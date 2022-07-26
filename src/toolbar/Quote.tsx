@@ -1,9 +1,9 @@
-import { $createParagraphNode, $getSelection, $isRangeSelection } from 'lexical';
-import React from 'react';
 import { Button, Tooltip } from '@arco-design/web-react';
 import { IconQuote } from '@arco-design/web-react/icon';
 import { $createQuoteNode } from '@lexical/rich-text';
 import { $wrapLeafNodesInElements } from '@lexical/selection';
+import { $createParagraphNode, $getSelection, $isRangeSelection } from 'lexical';
+import React from 'react';
 import { useToolbarContext } from '../context/ToolbarContext';
 
 export default function Quote() {

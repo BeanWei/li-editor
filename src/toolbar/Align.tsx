@@ -1,7 +1,7 @@
-import { FORMAT_ELEMENT_COMMAND } from 'lexical';
-import React from 'react';
 import { Button, Dropdown, Space, Tooltip } from '@arco-design/web-react';
 import { IconAlignCenter, IconAlignLeft, IconAlignRight } from '@arco-design/web-react/icon';
+import { FORMAT_ELEMENT_COMMAND } from 'lexical';
+import React from 'react';
 import { useToolbarContext } from '../context/ToolbarContext';
 import { IconAlignJustify } from '../ui';
 

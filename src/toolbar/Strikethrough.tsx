@@ -1,7 +1,7 @@
-import { FORMAT_TEXT_COMMAND } from 'lexical';
-import React from 'react';
 import { Button, Tooltip } from '@arco-design/web-react';
 import { IconStrikethrough } from '@arco-design/web-react/icon';
+import { FORMAT_TEXT_COMMAND } from 'lexical';
+import React from 'react';
 import { useToolbarContext } from '../context/ToolbarContext';
 import { IS_APPLE } from '../shared/environment';
 

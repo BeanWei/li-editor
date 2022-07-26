@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from 'react';
 import { Button, Popover, Tooltip } from '@arco-design/web-react';
+import React, { useCallback, useState } from 'react';
 import { useToolbarContext } from '../context/ToolbarContext';
 import { ColorPicker, IconBgColor } from '../ui';
 

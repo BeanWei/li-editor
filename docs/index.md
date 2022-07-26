@@ -1,8 +1,8 @@
 ## Hello li-editor!
 
 ```tsx
-import React from 'react';
 import { Editor, Toolbar } from 'li-editor';
+import React from 'react';
 
 export default () => {
   return (

@@ -1,4 +1,4 @@
-import Editor from './Editor';
+import Editor, { EditorProps } from './Editor';
 import Toolbar from './toolbar';
 
-export { Editor, Toolbar };
+export { Editor, EditorProps, Toolbar };

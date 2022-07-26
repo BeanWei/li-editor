@@ -1,7 +1,7 @@
-import { FORMAT_TEXT_COMMAND } from 'lexical';
-import React from 'react';
 import { Button, Dropdown, Menu, Tooltip } from '@arco-design/web-react';
 import { IconCode } from '@arco-design/web-react/icon';
+import { FORMAT_TEXT_COMMAND } from 'lexical';
+import React from 'react';
 import { useToolbarContext } from '../context/ToolbarContext';
 import { IconMoreMark, IconSubscript, IconSuperscript } from '../ui';
 
