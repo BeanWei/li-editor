@@ -1,73 +1,58 @@
 {
-  "private": true,
   "name": "li-editor",
-  "version": "0.0.1",
-  "scripts": {
-    "start": "dumi dev",
-    "docs:build": "dumi build",
-    "docs:deploy": "gh-pages -d docs-dist",
-    "build": "father build",
-    "deploy": "npm run docs:build && npm run docs:deploy",
-    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
-    "prepublishOnly": "npm run build"
-  },
+  "description": "A nice editor",
+  "version": "0.0.0",
+  "homepage": "https://github.com/BeanWei/li-editor",
+  "author": "Bean Wei",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@7.11.0",
   "files": [
     "dist"
   ],
-  "module": "dist/esm/index.js",
-  "typings": "dist/esm/index.d.ts",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "keywords": [
+    "editor",
+    "cms",
+    "page builder"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BeanWei/li-editor.git"
   },
-  "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
-    ]
+  "bugs": {
+    "url": "https://github.com/BeanWei/li-editor/issues"
+  },
+  "scripts": {
+    "start": "dumi dev",
+    "lint": "eslint .",
+    "up": "taze major -I"
   },
   "dependencies": {
-    "@arco-design/web-react": "^2.37.2",
-    "@excalidraw/excalidraw": "0.11.0",
-    "@lexical/clipboard": "0.3.8",
-    "@lexical/code": "0.3.8",
-    "@lexical/file": "0.3.8",
-    "@lexical/hashtag": "0.3.8",
-    "@lexical/html": "^0.3.8",
-    "@lexical/link": "0.3.8",
-    "@lexical/list": "0.3.8",
-    "@lexical/mark": "0.3.8",
-    "@lexical/overflow": "0.3.8",
-    "@lexical/plain-text": "0.3.8",
-    "@lexical/react": "0.3.8",
-    "@lexical/rich-text": "0.3.8",
-    "@lexical/selection": "0.3.8",
-    "@lexical/table": "0.3.8",
-    "@lexical/utils": "0.3.8",
-    "katex": "^0.15.2",
-    "lexical": "0.3.8",
+    "@lexical/clipboard": "^0.5.0",
+    "@lexical/code": "^0.5.0",
+    "@lexical/file": "^0.5.0",
+    "@lexical/hashtag": "^0.5.0",
+    "@lexical/html": "^0.5.0",
+    "@lexical/link": "^0.5.0",
+    "@lexical/list": "^0.5.0",
+    "@lexical/mark": "^0.5.0",
+    "@lexical/overflow": "^0.5.0",
+    "@lexical/plain-text": "^0.5.0",
+    "@lexical/react": "^0.5.0",
+    "@lexical/rich-text": "^0.5.0",
+    "@lexical/selection": "^0.5.0",
+    "@lexical/table": "^0.5.0",
+    "@lexical/utils": "^0.5.0",
+    "lexical": "^0.5.0",
     "lodash-es": "^4.17.21",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "y-websocket": ">=1.3.x",
-    "yjs": ">=13.5.22"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.15.1",
-    "@testing-library/react": "^13.0.0",
-    "@types/jest": "^27.0.3",
-    "@types/lodash-es": "^4.14.182",
-    "@umijs/fabric": "^3.0.0",
-    "@umijs/test": "^3.0.5",
-    "dumi": "^1.1.0",
-    "father": "^4.0.0-rc.2",
-    "gh-pages": "^3.0.0",
-    "lint-staged": "^10.0.7",
-    "prettier": "^2.2.1",
-    "prettier-plugin-organize-imports": "^3.0.0",
-    "yorkie": "^2.0.0"
+    "@antfu/eslint-config": "^0.27.0",
+    "eslint": "^8.25.0",
+    "dumi": "^1.1.48",
+    "taze": "^0.8.2",
+    "typescript": "^4.8.4"
   }
 }
