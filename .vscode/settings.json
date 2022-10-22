@@ -1,10 +1,20 @@
 {
   "cSpell.words": [
-    "dumi"
+    "actionbutton",
+    "addcolumns",
+    "addrows",
+    "Klass",
+    "listitem",
+    "markoverlap",
+    "primaryselected",
+    "Resizer",
+    "scroller",
+    "sortedindicator",
+    "unplugin"
   ],
   "prettier.enable": false,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  },
-  "editor.formatOnSave": false
+  }
 }

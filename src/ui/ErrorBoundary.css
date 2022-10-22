@@ -1,0 +1,8 @@
+.li-editor-error-container {
+  background-color: #f00;
+  color: #fff;
+}
+
+.li-editor-error-container a {
+  color: #fff;
+}
