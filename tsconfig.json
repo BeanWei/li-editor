@@ -14,10 +14,10 @@
     "strictNullChecks": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "types": [],
-    "paths": {
-      "~/*": ["src/*"]
-    }
+    "types": [
+      "vite/client",
+      "unplugin-icons/types/react"
+    ]
   },
   "exclude": ["dist", "node_modules"]
 }

@@ -1,0 +1,153 @@
+.li-editor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+}
+
+.li-editor-scroller {
+  min-height: 150px;
+  height: 360px;
+  border: 0;
+  resize: none;
+  cursor: text;
+  display: block;
+  position: relative;
+  outline: 0;
+  overflow: auto;
+  resize: vertical;
+}
+
+.li-editor-content {
+  height: 100%;
+  position: relative;
+}
+
+.li-editor-ltr {
+  text-align: left;
+}
+
+.li-editor-rtl {
+  text-align: right;
+}
+
+.li-editor-toolbar {
+  position: relative;
+  display: flex;
+  margin-bottom: 1px;
+  padding: 4px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  vertical-align: middle;
+  overflow: auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.li-editor-toolbar button.li-editor-toolbar-item {
+  border: 0;
+  display: flex;
+  background: none;
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  vertical-align: middle;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.li-editor-toolbar button.li-editor-toolbar-item:disabled {
+  cursor: not-allowed;
+}
+
+.li-editor-toolbar button.li-editor-toolbar-item.spaced {
+  margin-right: 2px;
+}
+
+.li-editor-toolbar button.li-editor-toolbar-item .format {
+  background-size: contain;
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  vertical-align: -0.25em;
+  display: flex;
+  opacity: 0.6;
+}
+
+.li-editor-toolbar button.li-editor-toolbar-item:disabled .icon,
+.li-editor-toolbar button.li-editor-toolbar-item:disabled .text,
+.li-editor-toolbar button.li-editor-toolbar-item:disabled .format,
+.li-editor-toolbar button.li-editor-toolbar-item:disabled .chevron-down {
+  opacity: 0.2;
+}
+
+.li-editor-toolbar button.li-editor-toolbar-item.active {
+  background-color: rgba(223, 232, 250, 0.3);
+}
+
+.li-editor-toolbar button.li-editor-toolbar-item.active i {
+  opacity: 1;
+}
+
+.li-editor-toolbar .li-editor-toolbar-item:hover:not([disabled]) {
+  background-color: #eee;
+}
+
+.li-editor-toolbar .li-editor-toolbar-item.font-family .text {
+  display: block;
+  max-width: 40px;
+}
+
+.li-editor-toolbar .code-language {
+  width: 150px;
+}
+
+.li-editor-toolbar .li-editor-toolbar-item .text {
+  display: flex;
+  line-height: 20px;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #777;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 20px;
+  text-align: left;
+  padding-right: 10px;
+}
+
+.li-editor-toolbar .li-editor-toolbar-item .icon {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  user-select: none;
+  margin-right: 8px;
+  line-height: 16px;
+  background-size: contain;
+}
+
+.li-editor-toolbar i.chevron-down {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  user-select: none;
+}
+
+.li-editor-toolbar i.chevron-down.inside {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  margin-left: -25px;
+  margin-top: 11px;
+  margin-right: 10px;
+  pointer-events: none;
+}
+
+.li-editor-toolbar .divider {
+  width: 1px;
+  background-color: #eee;
+  margin: 0 4px;
+}

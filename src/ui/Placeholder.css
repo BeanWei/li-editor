@@ -4,9 +4,9 @@
   overflow: hidden;
   position: absolute;
   text-overflow: ellipsis;
-  top: 8px;
-  left: 28px;
-  right: 28px;
+  top: 50px;
+  left: 12px;
+  right: 12px;
   user-select: none;
   white-space: nowrap;
   display: inline-block;

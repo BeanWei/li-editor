@@ -17,6 +17,8 @@ import ErrorBoundary from './ui/ErrorBoundary'
 import ContentEditable from './ui/ContentEditable'
 import Nodes from './nodes'
 import Theme from './themes'
+import ToolbarPlugin from './plugins/ToolbarPlugin'
+import './LiEditor.css'
 
 export default function LiEditor(): JSX.Element {
   const { historyState } = useSharedHistoryContext()
@@ -34,7 +36,8 @@ export default function LiEditor(): JSX.Element {
   return (
     <LexicalComposer initialConfig={initialConfig}>
       <SharedHistoryContext>
-        <div className="li-editor-container">
+        <div className="li-editor">
+          <ToolbarPlugin />
           <AutoFocusPlugin />
           <ClearEditorPlugin />
           <HashtagPlugin />
@@ -43,7 +46,7 @@ export default function LiEditor(): JSX.Element {
           <RichTextPlugin
             contentEditable={
               <div className="li-editor-scroller">
-                <div className="li-editor">
+                <div className="li-editor-content">
                   <ContentEditable />
                 </div>
               </div>

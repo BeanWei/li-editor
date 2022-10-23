@@ -1,23 +1,15 @@
 import { defineConfig } from 'vite'
-import UnoCss from 'unocss/vite'
-import { presetUno, presetAttributify } from 'unocss'
+import Icons from 'unplugin-icons/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      formats: ['es']
+      formats: ['es'],
     },
   },
   plugins: [
-    UnoCss({
-      mode: 'per-module',
-      include: [/\.ts$/],
-      presets: [
-        presetAttributify(),
-        presetUno()
-      ],
-    }),
-  ]
+    Icons({ compiler: 'jsx', jsx: 'react' }),
+  ],
 })
