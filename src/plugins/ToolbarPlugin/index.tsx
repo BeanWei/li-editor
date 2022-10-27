@@ -5,8 +5,13 @@ import {
 } from '@lexical/utils'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { IS_APPLE } from '../../utils/environment'
-import IconUndo from '~icons/ri/arrow-go-back-fill'
-import IconRedo from '~icons/ri/arrow-go-forward-fill'
+import IconUndo from '~icons/ri/arrow-go-back-line'
+import IconRedo from '~icons/ri/arrow-go-forward-line'
+import IconLayout from '~icons/ri/layout-column-line'
+
+function Divider(): JSX.Element {
+  return <div className="divider" />
+}
 
 export default function ToolbarPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext()
@@ -66,6 +71,7 @@ export default function ToolbarPlugin(): JSX.Element {
   return (
     <div className="li-editor-toolbar">
       <button
+        type="button"
         disabled={!canUndo || !isEditable}
         onClick={() => {
           activeEditor.dispatchCommand(UNDO_COMMAND, undefined)
@@ -74,9 +80,10 @@ export default function ToolbarPlugin(): JSX.Element {
         className="li-editor-toolbar-item spaced"
         aria-label="Undo"
       >
-        <IconUndo />
+        <IconUndo className="format" />
       </button>
       <button
+        type="button"
         disabled={!canRedo || !isEditable}
         onClick={() => {
           activeEditor.dispatchCommand(REDO_COMMAND, undefined)
@@ -85,7 +92,15 @@ export default function ToolbarPlugin(): JSX.Element {
         className="li-editor-toolbar-item"
         aria-label="Redo"
       >
-        <IconRedo />
+        <IconRedo className="format" />
+      </button>
+      <Divider />
+      <button
+        type="button"
+        className="li-editor-toolbar-item"
+        aria-label="layout"
+      >
+        <IconLayout className="format" />
       </button>
     </div>
   )

@@ -1,5 +1,6 @@
 import type { EditorThemeClasses } from 'lexical'
 import './text.css'
+import './column.css'
 
 const theme: EditorThemeClasses = {
   characterLimit: 'li-editor-character-limit',
